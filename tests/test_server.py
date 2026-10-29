@@ -240,6 +240,21 @@ def test_two_games_do_not_affect_each_other():
     assert client.get(f"/api/games/{b}").get_json()["status"] == "playing"
 
 
+@pytest.mark.parametrize("outcome,letters", [("won", "cat"), ("lost", "zqxjkv")])
+def test_new_game_after_finishing_one(client, outcome, letters):
+    first = create(client)["game_id"]
+    for letter in letters:
+        guess(client, first, letter)
+    assert client.get(f"/api/games/{first}").get_json()["status"] == outcome
+
+    second = create(client)
+    assert second["game_id"] != first
+    assert second["status"] == "playing" and second["remaining_guesses"] == 6
+    assert second["guessed_letters"] == [] and "word" not in second
+    assert guess(client, second["game_id"], "c").status_code == 200
+    assert client.get(f"/api/games/{first}").get_json()["status"] == outcome  # old game untouched
+
+
 def test_separate_apps_do_not_share_games(words):
     one, two = create_app(words).test_client(), create_app(words).test_client()
     game_id = create(one)["game_id"]

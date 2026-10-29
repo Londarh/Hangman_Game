@@ -92,13 +92,13 @@ Done when: a complete game can be played in the browser and a second game starts
 
 ## Phase 6 — Testing and hardening
 
-- [ ] Run the full suite; fill any gaps against the assignment's test list (3 difficulties, correct/incorrect, repeated/invalid, win/loss, new game after finishing, invalid requests, no word leak, UI updates after each guess).
-- [ ] One end-to-end test that plays a full game through the HTTP API.
-- [ ] Manual checklist in the README for the browser behaviour.
-- [ ] Chrome DevTools check: inspect one guess request and JSON response (needed for the demo).
-- [ ] Fix anything found; list known limitations.
+- [x] Run the full suite; fill any gaps against the assignment's test list (3 difficulties, correct/incorrect, repeated/invalid, win/loss, new game after finishing, invalid requests, no word leak, UI updates after each guess).
+- [x] One end-to-end test that plays a full game through the HTTP API.
+- [x] Manual checklist in the README for the browser behaviour.
+- [ ] Chrome DevTools check: inspect one guess request and JSON response (you do this yourself in Chrome; it is on the README checklist and needed for the demo).
+- [x] Fix anything found; list known limitations.
 
-Done when: all tests pass and the manual checklist has been walked through once.
+Done when: all tests pass (also verified in a fresh venv) and the manual checklist has been walked through once.
 
 ## Phase 7 — Deployment prep and README
 
