@@ -78,15 +78,15 @@ Done when: a full game can be played with `curl` and the tests pass.
 
 ## Phase 5 — Browser client (`static/`)
 
-- [ ] Serve `index.html` at `/`.
-- [ ] Difficulty selector and New Game button (no page reload).
-- [ ] Masked word, guessed letters, incorrect letters, remaining guesses.
-- [ ] On-screen A–Z buttons plus physical keyboard input; guessed letters disabled.
-- [ ] `fetch()` to the API only; no game logic and no word in JS.
-- [ ] SVG hangman that gains a part per incorrect guess.
-- [ ] Win/loss message that shows the revealed word (from the API response).
-- [ ] Show API errors instead of failing silently; usable at phone width.
-- [ ] Test that `/` and static files are served; manual play-through in the browser.
+- [x] Serve `index.html` at `/`.
+- [x] Difficulty selector and New Game button (no page reload).
+- [x] Masked word, guessed letters, incorrect letters, remaining guesses.
+- [x] On-screen A–Z buttons plus physical keyboard input; guessed letters disabled.
+- [x] `fetch()` to the API only; no game logic and no word in JS.
+- [x] SVG hangman that gains a part per incorrect guess.
+- [x] Win/loss message that shows the revealed word (from the API response).
+- [x] Show API errors instead of failing silently; usable at phone width.
+- [x] Test that `/` and static files are served; manual play-through in the browser.
 
 Done when: a complete game can be played in the browser and a second game starts without reloading.
 

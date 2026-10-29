@@ -3,7 +3,7 @@
 import os
 import uuid
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from werkzeug.exceptions import HTTPException
 
 from game import GameOverError, HangmanGame, InvalidGuessError
@@ -27,6 +27,10 @@ def create_app(word_manager=None):
 
     def game_state(game_id, game):
         return {"game_id": game_id, **game.to_state()}
+
+    @app.get("/")
+    def index():
+        return send_from_directory(app.static_folder, "index.html")
 
     @app.post("/api/games")
     def create_game():

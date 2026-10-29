@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hangman</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Hangman</h1>
+
+    <div class="controls">
+      <label for="difficulty">Difficulty</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+      <button id="new-game" type="button" class="primary">New Game</button>
+    </div>
+
+    <div class="board">
+      <svg id="hangman" viewBox="0 0 200 240" role="img" aria-label="Hangman drawing">
+        <!-- gallows: always visible -->
+        <g class="gallows">
+          <line x1="20" y1="225" x2="130" y2="225"/>
+          <line x1="50" y1="225" x2="50" y2="20"/>
+          <line x1="50" y1="20" x2="150" y2="20"/>
+          <line x1="150" y1="20" x2="150" y2="50"/>
+        </g>
+        <!-- body parts: one is shown per wrong guess, in this order -->
+        <g class="figure">
+          <circle class="part" cx="150" cy="70" r="20"/>
+          <line class="part" x1="150" y1="90" x2="150" y2="150"/>
+          <line class="part" x1="150" y1="105" x2="120" y2="132"/>
+          <line class="part" x1="150" y1="105" x2="180" y2="132"/>
+          <line class="part" x1="150" y1="150" x2="125" y2="195"/>
+          <line class="part" x1="150" y1="150" x2="175" y2="195"/>
+        </g>
+      </svg>
+
+      <div class="info">
+        <p id="pattern" class="pattern" aria-live="polite">&nbsp;</p>
+        <p class="stat">Wrong guesses left: <strong id="remaining">-</strong></p>
+        <p class="stat">Guessed: <span id="guessed">-</span></p>
+        <p class="stat">Wrong: <span id="wrong" class="wrong-letters">-</span></p>
+      </div>
+    </div>
+
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+    <p id="error" class="error" role="alert" hidden></p>
+
+    <div id="keyboard" class="keyboard" aria-label="Letter keyboard"></div>
+    <p class="hint">You can also type letters on your keyboard.</p>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
