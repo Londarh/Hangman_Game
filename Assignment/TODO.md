@@ -95,19 +95,19 @@ Done when: a complete game can be played in the browser and a second game starts
 - [x] Run the full suite; fill any gaps against the assignment's test list (3 difficulties, correct/incorrect, repeated/invalid, win/loss, new game after finishing, invalid requests, no word leak, UI updates after each guess).
 - [x] One end-to-end test that plays a full game through the HTTP API.
 - [x] Manual checklist in the README for the browser behaviour.
-- [ ] Chrome DevTools check: inspect one guess request and JSON response (you do this yourself in Chrome; it is on the README checklist and needed for the demo).
+- [x] Chrome DevTools check: inspect one guess request and JSON response (done by you in Chrome while walking through the README checklist).
 - [x] Fix anything found; list known limitations.
 
-Done when: all tests pass (also verified in a fresh venv) and the manual checklist has been walked through once.
+Done when: all tests pass (also verified in a fresh venv) and the manual checklist has been walked through once (done).
 
 ## Phase 7 — Deployment prep and README
 
-- [ ] Verify locally with Gunicorn (needs WSL/Linux or Render's own build; Gunicorn does not run on native Windows): `gunicorn --bind 0.0.0.0:$PORT --workers 1 server:app`. On Windows, `flask run` or `python server.py` for local testing.
-- [ ] `render.yaml` (or documented dashboard settings): Python web service, build `pip install -r requirements.txt`, start command above, free plan.
-- [ ] `--workers 1` is required because games live in memory.
-- [ ] README: what it is, run locally, run tests, API reference with examples, deploy notes, known limitations (games are lost on restart or when the free instance sleeps).
+- [x] Verify locally with Gunicorn (needs WSL/Linux or Render's own build; Gunicorn does not run on native Windows): `gunicorn --bind 0.0.0.0:$PORT --workers 1 server:app`. On Windows, `flask run` or `python server.py` for local testing.
+- [x] `render.yaml` (or documented dashboard settings): Python web service, build `pip install -r requirements.txt`, start command above, free plan.
+- [x] `--workers 1` is required because games live in memory.
+- [x] README: what it is, run locally, run tests, API reference with examples, deploy notes, known limitations (games are lost on restart or when the free instance sleeps).
 
-Done when: a fresh clone follows the README and runs locally.
+Done when: a fresh clone follows the README and runs locally. (Gunicorn verified under WSL Ubuntu: one master plus one worker, `$PORT` respected.)
 
 ## Phase 8 — Deploy on Render
 

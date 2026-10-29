@@ -1,0 +1,25 @@
+# Render Blueprint: one free Python web service running the Flask app with Gunicorn.
+services:
+  - type: web
+    name: hangman
+    runtime: python
+    plan: free
+
+    # Only runtime dependencies (flask, gunicorn). requirements-dev.txt (pytest) is not installed here.
+    buildCommand: pip install -r requirements.txt
+
+    # IMPORTANT: keep --workers 1. Games are stored in memory inside the server process, so a second
+    # worker would have its own empty set of games: a game created in one worker would answer
+    # "game not found" when a later request was routed to the other. Render supplies $PORT.
+    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 1 server:app
+
+    # "/" returns the game page (HTTP 200), so Render can use it to check the service is up.
+    healthCheckPath: /
+
+    autoDeployTrigger: commit
+
+    envVars:
+      # Pin the Python version (must be a full x.y.z) so Render does not choose its own default.
+      # This is the version the tests were run with locally.
+      - key: PYTHON_VERSION
+        value: 3.12.5
