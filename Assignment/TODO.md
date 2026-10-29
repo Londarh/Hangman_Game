@@ -66,13 +66,13 @@ Done when: each difficulty returns valid words and bad input is rejected cleanly
 
 ## Phase 4 — Flask API (`server.py`)
 
-- [ ] In-memory game store; unique ids (`uuid4` or `secrets`).
-- [ ] `POST /api/games` (body `{"difficulty": ...}`; decide the default if omitted).
-- [ ] `GET /api/games/<id>`.
-- [ ] `POST /api/games/<id>/guess` (body `{"letter": ...}`).
-- [ ] JSON in and out; consistent error body such as `{"error": "..."}`; malformed or non-JSON bodies return 400, not 500.
-- [ ] Module-level `app`; debug mode off by default.
-- [ ] API tests with Flask's test client: all difficulties, correct/incorrect/duplicate/invalid guesses, win, loss, guess after end, unknown id, bad difficulty, bad JSON, separate games stay independent, no `word` while playing.
+- [x] In-memory game store; unique ids (`uuid4` or `secrets`).
+- [x] `POST /api/games` (body `{"difficulty": ...}`; decide the default if omitted).
+- [x] `GET /api/games/<id>`.
+- [x] `POST /api/games/<id>/guess` (body `{"letter": ...}`).
+- [x] JSON in and out; consistent error body such as `{"error": "..."}`; malformed or non-JSON bodies return 400, not 500.
+- [x] Module-level `app`; debug mode off by default.
+- [x] API tests with Flask's test client: all difficulties, correct/incorrect/duplicate/invalid guesses, win, loss, guess after end, unknown id, bad difficulty, bad JSON, separate games stay independent, no `word` while playing.
 
 Done when: a full game can be played with `curl` and the tests pass.
 
