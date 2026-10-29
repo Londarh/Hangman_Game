@@ -38,20 +38,20 @@ requirements.txt, render.yaml, README.md, .gitignore
 
 ## Phase 1 — Repo and skeleton
 
-- [ ] Git repo, Python `.gitignore`, origin set to the GitHub repo.
-- [ ] First commit: `Specification.md`, this TODO, `words/*.txt`.
-- [ ] `requirements.txt` (`flask`, `gunicorn`), empty `tests/`, stub `README.md`.
+- [x] Git repo, Python `.gitignore`, origin set to the GitHub repo.
+- [x] First commit: `Specification.md`, this TODO, `words/*.txt`.
+- [x] `requirements.txt` (`flask`, `gunicorn`), `requirements-dev.txt` (adds `pytest`), `pytest.ini`, `tests/`, stub `README.md`.
 
 Done when: repo is on GitHub and `pip install -r requirements.txt` works in a fresh venv.
 
 ## Phase 2 — Game engine (`game.py`)
 
-- [ ] `HangmanGame(word, max_incorrect=6)`; lowercases the word.
-- [ ] `guess(letter)`: validates a single a–z letter; rejects duplicates and guesses after the game ends (custom exception).
-- [ ] Tracks guessed and incorrect letters and remaining guesses.
-- [ ] Masked pattern, win/loss detection, status `playing` / `won` / `lost`.
-- [ ] `to_state()` returns the client-safe dict; includes `word` only when finished.
-- [ ] Unit tests (`unittest` or `pytest`): correct/incorrect, repeated, invalid, win, loss, no guess after end, no word leak while playing.
+- [x] `HangmanGame(word, max_incorrect=6)`; lowercases the word.
+- [x] `guess(letter)`: validates a single a–z letter; rejects duplicates and guesses after the game ends (custom exception).
+- [x] Tracks guessed and incorrect letters and remaining guesses.
+- [x] Masked pattern, win/loss detection, status `playing` / `won` / `lost`.
+- [x] `to_state()` returns the client-safe dict; includes `word` only when finished.
+- [x] Unit tests (`unittest` or `pytest`): correct/incorrect, repeated, invalid, win, loss, no guess after end, no word leak while playing.
 
 Done when: engine tests pass with no server involved.
 

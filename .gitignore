@@ -21,3 +21,7 @@ Thumbs.db
 .idea/
 .vscode/
 .claude/
+
+# Course materials kept out of the repo
+Assignment/cursor_transcript.md
+Assignment/hangman_assignment.md
