@@ -57,10 +57,10 @@ Done when: engine tests pass with no server involved.
 
 ## Phase 3 — Word management (`word_manager.py`)
 
-- [ ] Load `words/easy|medium|hard.txt` (path relative to the file, not the CWD).
-- [ ] Lowercase, skip blanks, drop duplicates, reject non-alphabetic entries.
-- [ ] `random_word(difficulty)`; unknown difficulty raises a clear error.
-- [ ] Tests: all three levels load, selection is from the right list, invalid difficulty rejected.
+- [x] Load `words/easy|medium|hard.txt` (path relative to the file, not the CWD).
+- [x] Lowercase, skip blanks, drop duplicates, reject non-alphabetic entries.
+- [x] `random_word(difficulty)`; unknown difficulty raises a clear error.
+- [x] Tests: all three levels load, selection is from the right list, invalid difficulty rejected.
 
 Done when: each difficulty returns valid words and bad input is rejected cleanly.
 
