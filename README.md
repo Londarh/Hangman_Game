@@ -10,6 +10,8 @@ The server owns all game logic and the hidden word. The browser only sends guess
 
 Pick Easy, Medium or Hard, guess letters by clicking or typing, and you have 6 wrong guesses before the hangman is complete. Word lists live in `words/`.
 
+**Live app:** <https://hangman-6ckj.onrender.com/> (Render free plan: if nobody has used it for 15 minutes the first load can take about a minute while it wakes up).
+
 Planning notes: [Assignment/TODO.md](Assignment/TODO.md) (phased plan) and [Assignment/Specification.md](Assignment/Specification.md) (original specification). The terminal client, bots, evaluation mode and leaderboard from the original specification are out of scope for this project.
 
 ## Install and run locally
@@ -173,7 +175,7 @@ Steps:
 2. Sign in at <https://dashboard.render.com> (you can sign in with GitHub) and allow Render to access the repository.
 3. In the dashboard choose **New** → **Blueprint**, select the repository and branch, and apply it. Render reads `render.yaml` from the repository root and creates the `hangman` service. (Menu wording may differ slightly.)
 4. Wait for the build and deploy to finish. The service's public `https://<name>.onrender.com` URL is shown at the top of its page.
-5. Open the URL and play a full game. You can also check the API: `curl -X POST https://<name>.onrender.com/api/games -H "Content-Type: application/json" -d '{"difficulty":"easy"}'`.
+5. Open the URL and play a full game. This project's deployment is at <https://hangman-6ckj.onrender.com/>. You can also check the API: `curl -X POST https://<name>.onrender.com/api/games -H "Content-Type: application/json" -d '{"difficulty":"easy"}'`.
 
 Later pushes to the connected branch redeploy automatically (`autoDeployTrigger: commit`).
 

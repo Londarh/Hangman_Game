@@ -111,12 +111,12 @@ Done when: a fresh clone follows the README and runs locally. (Gunicorn verified
 
 ## Phase 8 — Deploy on Render
 
-- [ ] Push to GitHub, connect the repo in Render, create the web service (manual step).
-- [ ] Open the public HTTPS URL and play a full game in the browser.
-- [ ] Hit the API on the live URL (create, get, guess) with `curl` or DevTools.
-- [ ] Put the live URL in the README.
+- [x] Push to GitHub, connect the repo in Render, create the web service (manual step).
+- [x] Open the public HTTPS URL and play a full game in the browser.
+- [x] Hit the API on the live URL (create, get, guess) with `curl` or DevTools.
+- [x] Put the live URL in the README.
 
-Done when: the deployed app works end to end, independent of the local machine.
+Done when: the deployed app works end to end, independent of the local machine. Live: https://hangman-6ckj.onrender.com/
 
 ## Phase 9 — Submission materials (not code)
 
